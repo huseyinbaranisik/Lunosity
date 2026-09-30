@@ -19,7 +19,7 @@ Platform, 40.000'den fazla gerçek Lumosity kullanıcı yorumunu analiz ederek k
 ---
 
 ### 🌟 Temel Özellikler
-* 🎮 **30 Beyin Oyunu:** Hafıza, Hız, Dikkat, Problem Çözme, Dil ve Esneklik kategorilerinde çeşitli oyunlar.
+* 🎮 **50+ Beyin Oyunu:** Hafıza, Hız, Dikkat, Problem Çözme, Dil ve Esneklik kategorilerinde çeşitli oyunlar.
 * 📊 **Canlı Dashboard:** Kişisel skor geçmişi, kategori bazlı performans grafikleri ve liderlik tablosu.
 * 🤖 **Büyük Veri Analizi:** 40.000+ Lumosity yorumu üzerinden sentiment analizi ve topluluk istatistikleri.
 * 🏆 **Percentile Karşılaştırması:** Oyun sonrası topluluk içindeki yerini öğren.
@@ -28,7 +28,7 @@ Platform, 40.000'den fazla gerçek Lumosity kullanıcı yorumunu analiz ederek k
 
 ---
 
-### 🎮 30 OYUN KATEGORİSİ
+### 🎮 6 OYUN KATEGORİSİ
 
 | Kategori | Oyunlar |
 | :--- | :--- |
