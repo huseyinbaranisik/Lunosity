@@ -30,14 +30,14 @@ Platform, 40.000'den fazla gerçek Lumosity kullanıcı yorumunu analiz ederek k
 
 ### 🎮 30 OYUN KATEGORİSİ
 
-| Kategori | Renk | Oyunlar |
-| :--- | :---: | :--- |
-| 🟣 **Hafıza** | Mor | Harf Sayısı, Renk Eşleştirme, Sayı Dizisi, Kart Çevirme, Kelime Ezber, Görüntü Hafıza |
-| 🟡 **Hız** | Amber | Tepki Testi, Hızlı Matematik, Harf Vurma, Renk Adı Testi, Hızlı Sıralama, Hız Yazım |
-| 🔵 **Dikkat** | Cyan | Odak Noktası, Fark Bul, Stroop Testi, Gürültüde Okuma, Nesne Takibi, Çift Görev |
-| 🟢 **Problem Çözme** | Yeşil | Mantık Bulmacası, Sayı Piramidi, Anagram, Örüntü Tamamla, Akış Bul, Sudoku Mini |
-| 🩷 **Dil** | Pembe | Kelime Zinciri, Kelime Üretme, Deyim Tamamla |
-| 🔴 **Esneklik** | Kırmızı | Renk Esnekliği, Kategori Geçiş, Çift Kural |
+| Kategori | Oyunlar |
+| :--- | :--- |
+| 🟣 **Hafıza** | Harf Sayısı, Renk Eşleştirme, Sayı Dizisi, Kart Çevirme, Kelime Ezber, Görüntü Hafıza |
+| 🟡 **Hız** | Tepki Testi, Hızlı Matematik, Harf Vurma, Renk Adı Testi, Hızlı Sıralama, Hız Yazım |
+| 🔵 **Dikkat** | Odak Noktası, Fark Bul, Stroop Testi, Gürültüde Okuma, Nesne Takibi, Çift Görev |
+| 🟢 **Problem Çözme** | Mantık Bulmacası, Sayı Piramidi, Anagram, Örüntü Tamamla, Akış Bul, Sudoku Mini |
+| 🩷 **Dil** | Kelime Zinciri, Kelime Üretme, Deyim Tamamla |
+| 🔴 **Esneklik** | Renk Esnekliği, Kategori Geçiş, Çift Kural |
 
 ---
 
