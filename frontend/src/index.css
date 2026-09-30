@@ -1,0 +1,382 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* ── GLOBAL BASE ─────────────────────────────────────────── */
+@layer base {
+  body {
+    background-color: #F5F0E8;
+    color: #111111;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    letter-spacing: -0.03em;
+  }
+}
+
+/* ── ANIMATIONS ──────────────────────────────────────────── */
+@keyframes moveDot {
+  0%   { background-position: 0 0; }
+  100% { background-position: 28px 28px; }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60%  { transform: translateX(-8px); }
+  40%, 80%  { transform: translateX(8px); }
+}
+
+@keyframes redPulse {
+  0%, 100% { opacity: 0; }
+  50%       { opacity: 1; }
+}
+
+@keyframes metallicSweep {
+  0%   { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-10px); }
+}
+
+@keyframes fadeUp {
+  0%   { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  0%   { opacity: 0; transform: scale(0.92); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes moveBg {
+  0%   { background-position: 0 0; }
+  100% { background-position: -31.2px 31.2px; }
+}
+
+.dot-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  background-image: radial-gradient(#aaa190 2.5px, transparent 2.5px);
+  background-size: 31.2px 31.2px;
+  animation: moveBg 2.2s linear infinite;
+  opacity: 0.9;
+}
+
+/* Hero section için — position: absolute, sadece hero içinde görünür */
+.hero-dot-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image: radial-gradient(#aaa190 2.5px, transparent 2.5px);
+  background-size: 31.2px 31.2px;
+  animation: moveBg 2.2s linear infinite;
+  opacity: 0.7;
+}
+
+/* ── SITE SHELL — statik nokta arka plan ─────────────────── */
+.dot-bg {
+  background-image: radial-gradient(circle, #C5BDB0 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* ── LOW TIME RED BORDER ─────────────────────────────────── */
+.animate-red-pulse::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  box-shadow:
+    inset 0  14px 50px 10px rgba(239, 68, 68, 0.6),
+    inset 0 -14px 50px 10px rgba(239, 68, 68, 0.6),
+    inset  14px 0 50px 10px rgba(239, 68, 68, 0.6),
+    inset -14px 0 50px 10px rgba(239, 68, 68, 0.6);
+  animation: redPulse 1s infinite ease-in-out;
+}
+
+.animate-shake {
+  animation: shake 0.3s ease-in-out;
+}
+
+/* ── METALLIC SWEEP (ana sayfa istatistik sayıları) ─────── */
+.metallic-text-yellow {
+  background: linear-gradient(110deg,#facc15 0%,#facc15 35%,#fffde7 50%,#facc15 65%,#facc15 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: metallicSweep 6.5s infinite linear;
+}
+.metallic-text-green {
+  background: linear-gradient(110deg,#4ade80 0%,#4ade80 35%,#f0fdf4 50%,#4ade80 65%,#4ade80 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: metallicSweep 6.5s infinite linear;
+}
+.metallic-text-cyan {
+  background: linear-gradient(110deg,#38bdf8 0%,#38bdf8 35%,#f0f9ff 50%,#38bdf8 65%,#38bdf8 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: metallicSweep 6.5s infinite linear;
+}
+.metallic-text-pink {
+  background: linear-gradient(110deg,#f472b6 0%,#f472b6 35%,#fdf2f8 50%,#f472b6 65%,#f472b6 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: metallicSweep 6.5s infinite linear;
+}
+
+/* ── SITE SHELL UI COMPONENTS (navbar, cards, buttons) ───── */
+
+/* Primary button — koyu zemin üzerinde parlayan */
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-2xl bg-ink text-white font-bold text-sm tracking-wide transition-all duration-200 cursor-pointer select-none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+.btn-primary:hover {
+  @apply bg-brand;
+  box-shadow: 0 4px 20px rgba(91,79,233,0.4);
+  transform: translateY(-1px);
+}
+.btn-primary:active { transform: translateY(0); }
+
+/* Secondary button — çerçeveli, saydam */
+.btn-secondary {
+  @apply inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-2xl bg-transparent border border-ink/20 text-ink font-bold text-sm tracking-wide transition-all duration-200 cursor-pointer select-none;
+}
+.btn-secondary:hover {
+  @apply border-ink/50 bg-ink/5;
+  transform: translateY(-1px);
+}
+
+/* Oyun katalogu ve oyun içi butonlar (brutal stil korundu) */
+.btn-brutal {
+  @apply border-2 border-black font-extrabold px-4 py-2.5 rounded-xl shadow-brutal
+         transition-all duration-150 active:translate-x-[2px] active:translate-y-[2px]
+         active:shadow-brutal-sm cursor-pointer select-none flex items-center
+         justify-center gap-2 hover:scale-105 relative z-10;
+}
+
+/* Site shell card — temiz, minimal */
+.site-card {
+  @apply bg-white rounded-3xl p-7 transition-all duration-200;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.06);
+}
+.site-card:hover {
+  box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  transform: translateY(-2px);
+}
+
+/* Game card (oyun listesi) */
+.game-card {
+  @apply bg-white rounded-2xl overflow-hidden cursor-pointer transition-all duration-200 select-none;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.07), 0 2px 8px rgba(0,0,0,0.05);
+}
+.game-card:hover {
+  box-shadow: 0 6px 28px rgba(0,0,0,0.13);
+  transform: translateY(-3px);
+}
+
+/* Category pill / filter tab */
+.cat-tab {
+  @apply px-4 py-2 rounded-full text-sm font-semibold transition-all duration-150 cursor-pointer border border-transparent;
+}
+.cat-tab.active {
+  @apply bg-ink text-white;
+}
+.cat-tab:not(.active) {
+  @apply text-ink-2 bg-surface;
+}
+.cat-tab:not(.active):hover {
+  background-color: rgba(17, 17, 17, 0.08);
+}
+
+/* Section label (üst küçük etiket) */
+.section-label {
+  @apply inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-mist mb-3;
+}
+
+/* Difficulty dot */
+.diff-dot {
+  @apply w-2 h-2 rounded-full bg-current;
+}
+
+/* Sticker tag (oyun içi — tutuldu) */
+.sticker-tag {
+  @apply border-2 border-black px-2 py-0.5 text-[10px] font-black uppercase tracking-wider rounded-md shadow-[2px_2px_0px_0px_#000] inline-block select-none relative z-10;
+}
+
+/* Card brutal (oyun içi) */
+.card-brutal {
+  @apply bg-white border-2 border-black rounded-2xl p-5 shadow-brutal transition-all duration-200 relative;
+}
+
+/* ── SCROLLBAR ────────────────────────────────────────────── */
+::-webkit-scrollbar       { width: 8px; }
+::-webkit-scrollbar-track { background: #F5F0E8; }
+::-webkit-scrollbar-thumb { background: #C5BDB0; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #9E9589; }
+
+/* ── DARK THEME ────────────────────────────────────────────── */
+html.dark {
+  color-scheme: dark;
+}
+
+html.dark body {
+  background-color: #0F0F14;
+  color: #E8E6F0;
+}
+
+/* Scrollbar — karanlık tema */
+html.dark ::-webkit-scrollbar-track { background: #1A1A24; }
+html.dark ::-webkit-scrollbar-thumb { background: #3A3A50; }
+html.dark ::-webkit-scrollbar-thumb:hover { background: #6666AA; }
+
+/* paper / surface */
+html.dark .bg-paper, html.dark .min-h-screen.bg-paper {
+  background-color: #0F0F14 !important;
+}
+
+/* Navbar */
+html.dark header {
+  background-color: rgba(15,15,20,0.85) !important;
+  border-bottom-color: rgba(255,255,255,0.08) !important;
+}
+html.dark .bg-ink\/5 {
+  background-color: rgba(255,255,255,0.06) !important;
+}
+
+/* Beyaz kartlar → koyu panel */
+html.dark .bg-white {
+  background-color: #1C1C28 !important;
+  color: #E8E6F0;
+}
+html.dark .game-card {
+  background-color: #1C1C28 !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.4), 0 2px 8px rgba(0,0,0,0.3);
+}
+html.dark .game-card:hover {
+  box-shadow: 0 6px 28px rgba(0,0,0,0.5);
+}
+html.dark .site-card {
+  background-color: #1C1C28 !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+
+/* Metinler */
+html.dark .text-ink    { color: #E8E6F0 !important; }
+html.dark .text-ink-2  { color: #A09DB8 !important; }
+html.dark .text-mist   { color: #6B6885 !important; }
+html.dark .text-black  { color: #E8E6F0 !important; }
+html.dark .text-slate-700 { color: #B0ADCC !important; }
+html.dark .text-slate-600 { color: #9996B8 !important; }
+html.dark .text-slate-800 { color: #C8C6E0 !important; }
+
+/* Borderlar */
+html.dark .border-ink\/10  { border-color: rgba(255,255,255,0.08) !important; }
+html.dark .border-ink\/12  { border-color: rgba(255,255,255,0.10) !important; }
+html.dark .border-ink\/8   { border-color: rgba(255,255,255,0.07) !important; }
+html.dark .border-ink\/80  { border-color: rgba(255,255,255,0.15) !important; }
+html.dark .border-black    { border-color: rgba(255,255,255,0.18) !important; }
+
+/* Input alanları */
+html.dark input[type="text"] {
+  background-color: #1C1C28 !important;
+  border-color: rgba(255,255,255,0.10) !important;
+  color: #E8E6F0 !important;
+}
+html.dark input::placeholder { color: #6B6885 !important; }
+
+/* Category tabs */
+html.dark .cat-tab:not(.active) {
+  background-color: rgba(255,255,255,0.06) !important;
+  color: #A09DB8 !important;
+}
+html.dark .cat-tab:not(.active):hover {
+  background-color: rgba(255,255,255,0.10) !important;
+}
+
+/* Büyük hero section */
+html.dark section {
+  background-color: transparent;
+}
+
+/* İstatistik bandı */
+html.dark .bg-ink {
+  background-color: #1A1A28 !important;
+}
+
+/* Brutal gölgeler — karanlık temada daha yumuşak */
+html.dark .shadow-brutal {
+  box-shadow: 4px 4px 0px 0px rgba(255,255,255,0.12) !important;
+}
+html.dark .shadow-brutal-sm {
+  box-shadow: 2px 2px 0px 0px rgba(255,255,255,0.10) !important;
+}
+html.dark [class*="shadow-[6px_6px"] {
+  box-shadow: 6px 6px 0px 0px rgba(255,255,255,0.10) !important;
+}
+
+/* Dashboard beyaz paneller */
+html.dark .rounded-3xl.bg-white,
+html.dark .rounded-2xl.bg-white {
+  background-color: #1C1C28 !important;
+}
+
+/* Kategori kartları (Home) — üst section */
+html.dark .border-2.border-ink\/80 {
+  border-color: rgba(255,255,255,0.12) !important;
+}
+html.dark .bg-white.px-5 {
+  background-color: #1C1C28 !important;
+}
+html.dark .border-t-2.border-ink\/80 {
+  border-color: rgba(255,255,255,0.12) !important;
+}
+
+/* Nav linkleri — aktif */
+html.dark nav .bg-white {
+  background-color: rgba(255,255,255,0.10) !important;
+}
+html.dark nav .text-ink\/60 { color: rgba(232,230,240,0.5) !important; }
+html.dark nav .text-ink     { color: #E8E6F0 !important; }
+
+/* Hero noktalı arka plan — karanlık temada mor nokta */
+html.dark .hero-dot-overlay {
+  background-image: radial-gradient(#5B4FE9 1.5px, transparent 1.5px);
+  opacity: 0.15;
+}
+
+/* Sticker etiketlerin metin renkleri dark'ta düzeltme */
+html.dark .sticker-tag {
+  border-color: rgba(255,255,255,0.25) !important;
+  box-shadow: 2px 2px 0px 0px rgba(255,255,255,0.15) !important;
+}
+
+/* Buton düzeltmesi */
+html.dark .btn-brutal {
+  border-color: rgba(255,255,255,0.20) !important;
+  box-shadow: 4px 4px 0px 0px rgba(255,255,255,0.12) !important;
+}
+
+/* Divide borders */
+html.dark .divide-black > * + * {
+  border-color: rgba(255,255,255,0.10) !important;
+}
+html.dark .border-t-2.border-black {
+  border-color: rgba(255,255,255,0.12) !important;
+}
+html.dark .border-b-2.border-black {
+  border-color: rgba(255,255,255,0.12) !important;
+}
+
