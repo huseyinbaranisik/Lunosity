@@ -114,7 +114,7 @@ export default function Navbar({ onOpenAuth, isDark, onToggleTheme }) {
           {/* Profil */}
           <button
             onClick={() => { sound.playClick(); onOpenAuth(); }}
-            className="ml-1 flex items-center gap-2 px-4 py-2 rounded-xl bg-ink text-white dark:bg-white dark:text-black text-sm font-semibold hover:bg-brand dark:hover:bg-brand dark:hover:text-white transition-all shadow-[0_2px_8px_rgba(0,0,0,0.2)] hover:shadow-[0_2px_12px_rgba(91,79,233,0.4)]"
+            className="navbar-auth-btn ml-1 flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold transition-all shadow-[0_2px_8px_rgba(0,0,0,0.2)] hover:shadow-[0_2px_12px_rgba(91,79,233,0.4)]"
           >
             <User size={15} />
             <span className="hidden sm:inline">Giriş Yap</span>

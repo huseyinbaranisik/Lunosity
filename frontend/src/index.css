@@ -1,4 +1,4 @@
-@import 'tailwindcss/base';
+﻿@import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
@@ -87,6 +87,43 @@
   background-size: 28px 28px;
 }
 
+/* ── HERO CARD 3D HOVER ───────────────────────────────────── */
+.hero-card-group {
+  cursor: default;
+}
+
+/* Grup hover'da tüm yapı hafif büyür */
+.hero-card-group:hover {
+}
+.hero-card-group:hover .hero-card-back {
+  transform: translate(14px, -10px) rotate(6deg);
+  opacity: 0.38;
+}
+.hero-card-group:hover .hero-card-front {
+  transform: translate(-8px, 7px) scale(1.025);
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.18);
+}
+.hero-card-group:hover .hero-card-emoji {
+  transform: scale(1.22) translateY(-6px);
+  filter: drop-shadow(0 8px 16px rgba(91, 79, 233, 0.25));
+}
+.hero-card-group:hover .hero-card-badge {
+  transform: scale(1.08) translateY(-2px);
+}
+.hero-card-group:hover .hero-float-top {
+  transform: translate(10px, -10px) scale(1.1) rotate(8deg);
+  box-shadow: 0 8px 28px rgba(255, 184, 0, 0.55);
+}
+.hero-card-group:hover .hero-float-bot {
+  transform: translate(-10px, 10px) scale(1.1) rotate(-5deg);
+  box-shadow: 0 8px 28px rgba(91, 79, 233, 0.55);
+}
+
+/* Dark mode uyumu */
+html.dark .hero-card-group:hover .hero-card-front {
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.5);
+}
+
 /* ── LOW TIME RED BORDER ─────────────────────────────────── */
 .animate-red-pulse::before {
   content: '';
@@ -164,7 +201,11 @@
   @apply border-2 border-black font-extrabold px-4 py-2.5 rounded-xl shadow-brutal
          transition-all duration-150 active:translate-x-[2px] active:translate-y-[2px]
          active:shadow-brutal-sm cursor-pointer select-none flex items-center
-         justify-center gap-2 hover:scale-105 relative z-10;
+         justify-center gap-2 relative z-10;
+}
+.btn-brutal:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 6px 6px 0px 0px rgba(0,0,0,0.85);
 }
 
 /* Site shell card — temiz, minimal */
@@ -230,6 +271,8 @@
 /* ── DARK THEME ────────────────────────────────────────────── */
 html.dark {
   color-scheme: dark;
+  --card-bg: #1C1C28;
+  --card-text: #E8E6F0;
 }
 
 html.dark body {
@@ -351,10 +394,18 @@ html.dark nav .bg-white {
 html.dark nav .text-ink\/60 { color: rgba(232,230,240,0.5) !important; }
 html.dark nav .text-ink     { color: #E8E6F0 !important; }
 
-/* Hero noktalı arka plan — karanlık temada mor nokta */
+/* Hero noktalı arka plan — karanlık temada mor nokta, light modla aynı boyut */
 html.dark .hero-dot-overlay {
-  background-image: radial-gradient(#5B4FE9 1.5px, transparent 1.5px);
-  opacity: 0.15;
+  background-image: radial-gradient(#5B4FE9 2.5px, transparent 2.5px);
+  background-size: 31.2px 31.2px;
+  opacity: 0.25;
+}
+
+/* Fixed dot-overlay — karanlık temada */
+html.dark .dot-overlay {
+  background-image: radial-gradient(#5B4FE9 2.5px, transparent 2.5px);
+  background-size: 31.2px 31.2px;
+  opacity: 0.18;
 }
 
 /* Sticker etiketlerin metin renkleri dark'ta düzeltme */
@@ -363,10 +414,31 @@ html.dark .sticker-tag {
   box-shadow: 2px 2px 0px 0px rgba(255,255,255,0.15) !important;
 }
 
+/* Navbar Auth Butonu — light/dark özel stil */
+.navbar-auth-btn {
+  background-color: #111111;
+  color: #ffffff;
+}
+.navbar-auth-btn:hover {
+  background-color: #5B4FE9;
+  color: #ffffff;
+}
+html.dark .navbar-auth-btn {
+  background-color: #ffffff !important;
+  color: #111111 !important;
+}
+html.dark .navbar-auth-btn:hover {
+  background-color: #5B4FE9 !important;
+  color: #ffffff !important;
+}
+
 /* Buton düzeltmesi */
 html.dark .btn-brutal {
   border-color: rgba(255,255,255,0.20) !important;
   box-shadow: 4px 4px 0px 0px rgba(255,255,255,0.12) !important;
+}
+html.dark .btn-brutal:hover {
+  box-shadow: 6px 6px 0px 0px rgba(255,255,255,0.20) !important;
 }
 
 /* Divide borders */
@@ -379,4 +451,86 @@ html.dark .border-t-2.border-black {
 html.dark .border-b-2.border-black {
   border-color: rgba(255,255,255,0.12) !important;
 }
+
+
+/* �� DASHBOARD DARK MODE �������������������������������������� */
+
+/* T�m text-black overridelar� */
+html.dark .text-black {
+  color: #E8E6F0 !important;
+}
+
+/* Slate metinler */
+html.dark .text-slate-600 { color: #9996B8 !important; }
+html.dark .text-slate-700 { color: #B0ADCC !important; }
+html.dark .text-slate-800 { color: #C8C6E0 !important; }
+html.dark .text-slate-500 { color: #7A77A0 !important; }
+
+/* Tablo */
+html.dark table { color: #E8E6F0 !important; }
+html.dark thead.bg-neo-yellow {
+  background-color: #3A2E00 !important;
+}
+html.dark thead.bg-neo-yellow th {
+  color: #FFD700 !important;
+}
+html.dark tbody tr:hover {
+  background-color: rgba(255,255,255,0.05) !important;
+}
+
+/* XP cubugu arka plani */
+html.dark .bg-slate-100 {
+  background-color: rgba(255,255,255,0.08) !important;
+}
+
+/* Bos durum kutusu */
+html.dark .bg-slate-50 {
+  background-color: rgba(255,255,255,0.04) !important;
+}
+
+/* Basiram - kilitli kartlar */
+html.dark .opacity-50.grayscale {
+  background-color: rgba(255,255,255,0.05) !important;
+  border-color: rgba(255,255,255,0.08) !important;
+}
+
+/* Dondurma butonu - kilitli hali */
+html.dark .bg-slate-200 {
+  background-color: rgba(255,255,255,0.08) !important;
+}
+
+/* �� SHINE TEXT (Generic metallic sweep) ��������������������� */
+.shine-text {
+  background: linear-gradient(110deg, currentColor 0%, currentColor 38%, rgba(255,255,255,0.8) 50%, currentColor 62%, currentColor 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: metallicSweep 6.5s infinite linear;
+}
+html.dark .shine-text {
+  background: linear-gradient(110deg, currentColor 0%, currentColor 38%, #8E96A3 50%, currentColor 62%, currentColor 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: metallicSweep 6.5s infinite linear;
+}
+
+/* �� RECHARTS DARK MODE ��������������������������������������� */
+html.dark .recharts-cartesian-axis-tick-value {
+  fill: #E8E6F0 !important;
+}
+html.dark .recharts-line-curve {
+  stroke: #E8E6F0 !important;
+}
+html.dark .recharts-cartesian-grid-horizontal line,
+html.dark .recharts-cartesian-grid-vertical line {
+  stroke: rgba(255, 255, 255, 0.15) !important;
+}
+html.dark .recharts-layer.recharts-line-dots circle {
+  stroke: #E8E6F0 !important;
+}
+html.dark .recharts-rectangle {
+  stroke: rgba(255, 255, 255, 0.2) !important;
+}
+
 

@@ -11,6 +11,20 @@
 
 ---
 
+### 🎬 TANITIM VİDEOSU
+
+<p align="center">
+  <a href="https://youtu.be/GkTWH3RuD7Y" target="_blank">
+    <img src="https://img.youtube.com/vi/GkTWH3RuD7Y/maxresdefault.jpg" alt="Lunosity 2.0 Tanıtım Videosu" width="720" style="border-radius:12px;" />
+  </a>
+  <br/>
+  <a href="https://youtu.be/GkTWH3RuD7Y">
+    <img src="https://img.shields.io/badge/▶%20YouTube'da%20İzle-FF0000?style=for-the-badge&logo=youtube&logoColor=white" />
+  </a>
+</p>
+
+---
+
 ### 📝 PROJE HAKKINDA
 **Lunosity 2.0**, Lumosity'den ilham alınarak geliştirilmiş, **30 farklı beyin egzersizi oyunu** barındıran modern bir web platformudur. React + Node.js mimarisiyle inşa edilen bu platform; hafıza, hız, dikkat, problem çözme, dil ve esneklik kategorilerinde kullanıcıların bilişsel becerilerini geliştirmelerine yardımcı olur.
 

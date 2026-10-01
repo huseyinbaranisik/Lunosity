@@ -64,7 +64,7 @@ export default function GameWrapper({ game, children }) {
 
         {/* ─── 1. IDLE STATE ───────────────────────────────────────────────── */}
         {status === 'idle' && (
-          <div className="max-w-md w-full bg-white border-[3px] border-black rounded-3xl p-8 shadow-brutal-lg text-center animate-fade-in">
+          <div className="max-w-md w-full border-[3px] border-black rounded-3xl p-8 shadow-brutal-lg text-center animate-fade-in" style={{ backgroundColor: 'var(--card-bg, #ffffff)' }}>
             <div
               className="w-24 h-24 mx-auto rounded-3xl border-[3px] border-black flex items-center justify-center text-5xl mb-4 shadow-brutal"
               style={{ backgroundColor: `${game.color}30` }}
@@ -72,27 +72,27 @@ export default function GameWrapper({ game, children }) {
               {game.icon}
             </div>
 
-            <h1 className="text-3xl font-black text-black mb-2">{game.name}</h1>
+            <h1 className="text-3xl font-black mb-2" style={{ color: 'var(--card-text, #111111)' }}>{game.name}</h1>
 
             <div className="flex items-center justify-center gap-2 mb-4">
               <span
                 className="px-3 py-1 rounded-xl text-xs font-black border-2 border-black shadow-brutal-sm"
-                style={{ backgroundColor: `${game.color}30` }}
+                style={{ backgroundColor: `${game.color}30`, color: '#111111' }}
               >
                 {game.categoryLabel || game.category}
               </span>
 
-              <div className="flex items-center gap-1 bg-neo-yellow border-2 border-black px-3 py-1 rounded-xl text-xs font-black shadow-brutal-sm">
+              <div className="flex items-center gap-1 bg-neo-yellow border-2 border-black px-3 py-1 rounded-xl text-xs font-black shadow-brutal-sm" style={{ color: '#111111' }}>
                 <Star size={14} fill="currentColor" />
                 <span>Zorluk: {game.difficulty}/3</span>
               </div>
             </div>
 
-            <p className="text-black text-sm font-semibold mb-6 bg-neo-bg p-4 rounded-2xl border-2 border-black">
+            <p className="text-sm font-semibold mb-6 p-4 rounded-2xl border-2 border-black/20" style={{ backgroundColor: 'rgba(0,0,0,0.06)', color: 'var(--card-text, #111111)' }}>
               {game.description}
             </p>
 
-            <div className="flex items-center justify-center gap-6 mb-8 text-xs font-black text-black">
+            <div className="flex items-center justify-center gap-6 mb-8 text-xs font-black" style={{ color: '#111111' }}>
               <div className="flex items-center gap-1.5 bg-neo-blue border-2 border-black px-3 py-1.5 rounded-xl shadow-brutal-sm">
                 <Clock size={16} />
                 <span>Süre: {game.timeLimit} sn</span>

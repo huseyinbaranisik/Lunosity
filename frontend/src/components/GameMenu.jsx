@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { GAMES, CATEGORIES } from '../constants/games';
-import { Play, Search, Clock, Zap, Brain, Target, ArrowUpRight } from 'lucide-react';
+import { Play, Search, Clock, Zap, Brain, Target, ArrowUpRight, Star } from 'lucide-react';
 import { sound } from '../utils/sound';
 
 const CAT_COLORS = {
@@ -123,20 +123,27 @@ export default function GameMenu() {
                       className="absolute -top-4 -right-4 w-16 h-16 rounded-full opacity-20"
                       style={{ backgroundColor: '#fff' }}
                     />
+                    {/* Sol alt köşe ışık efekti */}
+                    <div
+                      className="absolute -bottom-8 -left-8 w-28 h-28 rounded-full opacity-15"
+                      style={{ backgroundColor: '#fff' }}
+                    />
                     <span
                       className="text-5xl group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-200 select-none drop-shadow-sm relative z-10"
                     >
                       {game.icon}
                     </span>
 
-                    {/* Zorluk noktaları — sağ alt */}
-                    <div className="absolute bottom-2 right-2.5 flex gap-0.5">
+                    {/* Zorluk yıldızları — sağ alt */}
+                    <div className="absolute bottom-1.5 right-2 flex gap-0.5">
                       {[1, 2, 3].map((d) => (
-                        <span
+                        <Star
                           key={d}
-                          className="w-1.5 h-1.5 rounded-full"
+                          size={15}
+                          strokeWidth={1.5}
                           style={{
-                            backgroundColor: d <= dots ? '#fff' : 'rgba(255,255,255,0.35)',
+                            fill: d <= dots ? '#FFD700' : 'rgba(0,0,0,0.25)',
+                            color: d <= dots ? '#FFD700' : 'rgba(0,0,0,0.25)',
                           }}
                         />
                       ))}
@@ -144,7 +151,7 @@ export default function GameMenu() {
                   </div>
 
                   {/* Alt bilgi */}
-                  <div className="p-3.5 flex flex-col flex-1 bg-white">
+                  <div className="p-3.5 flex flex-col flex-1 bg-transparent">
                     {/* Kategori etiketi */}
                     <div
                       className="inline-flex items-center gap-1 text-[9px] font-black uppercase tracking-wider mb-1.5 px-1.5 py-0.5 rounded-md w-fit"

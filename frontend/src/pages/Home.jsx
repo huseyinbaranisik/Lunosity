@@ -88,13 +88,16 @@ export default function Home({ onOpenAuth }) {
 
           {/* Sağ — görsel blok (karakter kartı referansı gibi) */}
           <div className="hidden lg:flex items-center justify-center">
-            <div className="relative w-[420px] h-[420px]">
-              {/* Ana büyük kart */}
-              <div className="absolute inset-0 bg-brand rounded-[2.5rem] rotate-3 opacity-20" />
-              <div className="absolute inset-0 bg-white rounded-[2.5rem] shadow-[0_20px_60px_rgba(0,0,0,0.12)] flex flex-col items-center justify-center p-10 text-center">
-                <div className="text-[6rem] leading-none mb-4">🧠</div>
-                <div className="font-black text-2xl text-ink mb-2">Beyin Antrenmanı</div>
-                <div className="text-sm text-mist max-w-[220px]">Günde 5 dakika ile uzun vadeli bilişsel gelişim</div>
+            <div className="hero-card-group relative w-[420px] h-[420px]">
+
+              {/* Arka plan (mor) kart — hover’da sağ üste kayar */}
+              <div className="hero-card-back absolute inset-0 bg-brand rounded-[2.5rem] rotate-3 opacity-20 transition-all duration-500" />
+
+              {/* Ön beyaz kart — hover’da sol alta kayar */}
+              <div className="hero-card-front absolute inset-0 bg-white rounded-[2.5rem] shadow-[0_20px_60px_rgba(0,0,0,0.12)] flex flex-col items-center justify-center p-10 text-center transition-all duration-500">
+                <div className="hero-card-emoji text-[6rem] leading-none mb-4 transition-all duration-500 select-none">🧠</div>
+                <div className="font-black text-2xl text-ink mb-2 transition-all duration-300">Beyin Antrenmanı</div>
+                <div className="text-sm text-mist max-w-[220px] transition-all duration-300">Günde 5 dakika ile uzun vadeli bilişsel gelişim</div>
 
                 {/* Küçük rozetler */}
                 <div className="flex gap-2 mt-6 flex-wrap justify-center">
@@ -103,7 +106,7 @@ export default function Home({ onOpenAuth }) {
                     return (
                       <span
                         key={cat.id}
-                        className="text-xs font-bold px-3 py-1 rounded-full"
+                        className="hero-card-badge text-xs font-bold px-3 py-1 rounded-full transition-all duration-300"
                         style={{ backgroundColor: col.bg, color: col.text }}
                       >
                         {cat.icon} {cat.label}
@@ -114,10 +117,10 @@ export default function Home({ onOpenAuth }) {
               </div>
 
               {/* Yüzen küçük kartlar */}
-              <div className="absolute -top-4 -right-6 bg-accent-amber text-ink text-xs font-black px-3 py-2 rounded-2xl shadow-[0_4px_16px_rgba(255,184,0,0.4)] rotate-6">
+              <div className="hero-float-top absolute -top-4 -right-6 bg-accent-amber text-ink text-xs font-black px-3 py-2 rounded-2xl shadow-[0_4px_16px_rgba(255,184,0,0.4)] rotate-6 transition-all duration-500">
                 🔥 5 Gün Seri
               </div>
-              <div className="absolute -bottom-4 -left-6 bg-brand text-white text-xs font-black px-3 py-2 rounded-2xl shadow-[0_4px_16px_rgba(91,79,233,0.4)] -rotate-3">
+              <div className="hero-float-bot absolute -bottom-4 -left-6 bg-brand text-white text-xs font-black px-3 py-2 rounded-2xl shadow-[0_4px_16px_rgba(91,79,233,0.4)] -rotate-3 transition-all duration-500">
                 ⚡ 195ms Tepki
               </div>
             </div>
@@ -143,13 +146,14 @@ export default function Home({ onOpenAuth }) {
       </section>
 
       {/* ──── KATEGORİLER ───────────────────────────────────────── */}
-      <section className="py-24 max-w-7xl mx-auto px-5">
-        <div className="mb-12">
+      <section className="pt-20 pb-12 max-w-7xl mx-auto px-5">
+
+        <div className="mb-12 relative z-10">
           <div className="section-label">6 Bilişsel Alan</div>
           <h2 className="text-4xl font-black text-ink">Becerilerini Geliştir</h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10">
           {cats.map((cat, i) => {
             const col = CATEGORY_COLORS[cat.id] || { bg: '#5B4FE9', text: '#fff', light: '#EAE8FF' };
             const count = GAMES.filter((g) => g.category === cat.id).length;
@@ -165,7 +169,12 @@ export default function Home({ onOpenAuth }) {
                   className="h-36 flex items-end p-5 relative overflow-hidden"
                   style={{ backgroundColor: col.bg }}
                 >
-                  <span className="absolute top-3 right-3 text-6xl opacity-100 group-hover:scale-125 group-hover:rotate-6 transition-all duration-300 select-none drop-shadow-md">
+                  {/* Küçük ışık efekti — sol üst (Orijinalin %75'i kadar büyütüldü: 112px) */}
+                  <div className="absolute -top-14 -left-14 w-28 h-28 rounded-full opacity-20" style={{ backgroundColor: '#fff' }} />
+                  {/* Büyük ışık efekti — sağ alt (Orijinalin %50'si kadar büyütüldü: 168px) */}
+                  <div className="absolute -bottom-[84px] -right-[84px] w-[168px] h-[168px] rounded-full opacity-15" style={{ backgroundColor: '#fff' }} />
+                  
+                  <span className="absolute top-3 right-3 text-6xl opacity-100 group-hover:scale-125 group-hover:rotate-6 transition-all duration-300 select-none drop-shadow-md z-10">
                     {cat.icon}
                   </span>
                   <div className="relative z-10">
@@ -178,13 +187,13 @@ export default function Home({ onOpenAuth }) {
                   </div>
                 </div>
 
-                {/* Alt beyaz blok */}
-                <div className="bg-white px-5 py-4 flex items-center justify-between border-t-2 border-ink/80">
+                {/* Alt blok */}
+                <div className="bg-paper dark:bg-[#1C1C28] px-5 py-4 flex items-center justify-between border-t-2 border-ink/20">
                   <p className="text-xs text-ink-2 font-bold max-w-[190px] leading-relaxed">
                     {cat.description || 'Egzersizleri keşfet ve beynini güçlendir.'}
                   </p>
                   <div
-                    className="w-10 h-10 rounded-2xl border-2 border-black flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform shadow-brutal-sm"
+                    className="w-10 h-10 rounded-2xl border-2 border-ink/30 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform shadow-brutal-sm"
                     style={{ backgroundColor: col.light }}
                   >
                     <ArrowUpRight size={18} style={{ color: col.bg }} />

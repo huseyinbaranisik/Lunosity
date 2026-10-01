@@ -1,5 +1,5 @@
 export const GAMES = [
-  // ─── 1. HAFIZA (MEMORY) (10 OYUN) ─────────────────────────────────────────
+  // ─── 1. HAFIZA (MEMORY) ────────────────────────────────────────────────────
   {
     id: 'memory-matrix',
     name: 'Hafıza Izgarası',
@@ -14,12 +14,12 @@ export const GAMES = [
   },
   {
     id: 'letter-count',
-    name: 'Harf Sayısı',
+    name: 'Harf Sayma',
     category: 'memory',
     categoryLabel: 'Hafıza',
     difficulty: 1,
     icon: '🔤',
-    description: 'Gösterilen kelimelerdeki belirli harfleri say',
+    description: 'Gösterilen kelimelerdeki belirli harfleri say.',
     timeLimit: 60,
     color: '#7c3aed',
     route: '/game/letter-count'
@@ -31,7 +31,7 @@ export const GAMES = [
     categoryLabel: 'Hafıza',
     difficulty: 1,
     icon: '🎨',
-    description: 'Renkleri hafızanda tut ve eşleştir',
+    description: 'Renkleri hafızanda tut ve eşleştir.',
     timeLimit: 60,
     color: '#7c3aed',
     route: '/game/color-match'
@@ -43,7 +43,7 @@ export const GAMES = [
     categoryLabel: 'Hafıza',
     difficulty: 2,
     icon: '🔢',
-    description: 'Sayı dizisini ezberle ve tekrarla',
+    description: 'Sayı dizisini ezberle ve tekrarla.',
     timeLimit: 90,
     color: '#7c3aed',
     route: '/game/number-sequence'
@@ -55,7 +55,7 @@ export const GAMES = [
     categoryLabel: 'Hafıza',
     difficulty: 2,
     icon: '🃏',
-    description: 'Kartların yerlerini ezberle ve çiftleri bul',
+    description: 'Kartların yerlerini ezberle ve çiftleri bul.',
     timeLimit: 120,
     color: '#7c3aed',
     route: '/game/card-flip'
@@ -67,19 +67,19 @@ export const GAMES = [
     categoryLabel: 'Hafıza',
     difficulty: 2,
     icon: '📝',
-    description: 'Kelime listesini kısa sürede ezberle',
+    description: 'Kelime listesini kısa sürede ezberle.',
     timeLimit: 90,
     color: '#7c3aed',
     route: '/game/word-memory'
   },
   {
     id: 'image-memory',
-    name: 'Görüntü Hafıza',
+    name: 'Görsel Hafıza',
     category: 'memory',
     categoryLabel: 'Hafıza',
     difficulty: 3,
     icon: '🖼️',
-    description: 'Görsellerin konumlarını hatırla',
+    description: 'Görsellerin konumlarını hatırla.',
     timeLimit: 120,
     color: '#7c3aed',
     route: '/game/image-memory'
@@ -109,15 +109,15 @@ export const GAMES = [
     route: '/game/sound-memory'
   },
 
-  // ─── 2. HIZ (SPEED) (10 OYUN) ──────────────────────────────────────────────
+  // ─── 2. HIZ (SPEED) ────────────────────────────────────────────────────────
   {
     id: 'snake-brain',
-    name: 'Nöro Yılan (Refleks)',
+    name: 'Yılan',
     category: 'speed',
     categoryLabel: 'Hız',
     difficulty: 2,
     icon: '🐍',
-    description: 'Yılanı yön tuşlarıyla veya butonlarla pürüzsüz yönet, elmayı ye ve kendine/duvarlara çarpma!',
+    description: 'Yılanı yönet, elmayı ye, duvarlara çarpma!',
     timeLimit: 60,
     color: '#f59e0b',
     route: '/game/snake-brain'
@@ -129,7 +129,7 @@ export const GAMES = [
     categoryLabel: 'Hız',
     difficulty: 1,
     icon: '⚡',
-    description: 'Uyarıya olabildiğince hızlı tepki ver',
+    description: 'Uyarıya olabildiğince hızlı tepki ver.',
     timeLimit: 30,
     color: '#f59e0b',
     route: '/game/reaction-test'
@@ -141,7 +141,7 @@ export const GAMES = [
     categoryLabel: 'Hız',
     difficulty: 2,
     icon: '➗',
-    description: 'Matematik işlemlerini hızla çöz',
+    description: 'Matematik işlemlerini hızla çöz.',
     timeLimit: 60,
     color: '#f59e0b',
     route: '/game/fast-math'
@@ -153,7 +153,7 @@ export const GAMES = [
     categoryLabel: 'Hız',
     difficulty: 2,
     icon: '🌈',
-    description: 'Renk adı ile renk rengini karşılaştır',
+    description: 'Renk adı ile renk rengini hızla karşılaştır.',
     timeLimit: 60,
     color: '#f59e0b',
     route: '/game/color-name-test'
@@ -165,19 +165,19 @@ export const GAMES = [
     categoryLabel: 'Hız',
     difficulty: 3,
     icon: '📊',
-    description: 'Sayıları hızla sırala',
+    description: 'Sayıları hızla sırala.',
     timeLimit: 45,
     color: '#f59e0b',
     route: '/game/fast-sort'
   },
   {
     id: 'speed-type',
-    name: 'Hız Yazım',
+    name: 'Hızlı Yazım',
     category: 'speed',
     categoryLabel: 'Hız',
     difficulty: 3,
     icon: '⌨️',
-    description: 'Gösterilen metni hızla yaz',
+    description: 'Gösterilen metni hızla yaz.',
     timeLimit: 60,
     color: '#f59e0b',
     route: '/game/speed-type'
@@ -201,13 +201,13 @@ export const GAMES = [
     categoryLabel: 'Hız',
     difficulty: 3,
     icon: '🏹',
-    description: 'Göz kırpan okların yönüne göre tuşlara veya klavye oklarına anında bas.',
+    description: 'Göz kırpan okların yönüne göre anında tepki ver.',
     timeLimit: 45,
     color: '#f59e0b',
     route: '/game/chase-speed'
   },
 
-  // ─── 3. DİKKAT (ATTENTION) (10 OYUN) ──────────────────────────────────────
+  // ─── 3. DİKKAT (ATTENTION) ─────────────────────────────────────────────────
   {
     id: 'stroop-test',
     name: 'Stroop Testi',
@@ -215,7 +215,7 @@ export const GAMES = [
     categoryLabel: 'Dikkat',
     difficulty: 2,
     icon: '🧠',
-    description: 'Değişen kurala göre rengi veya metni hızlıca ayırt et.',
+    description: 'Rengi mi metni mi? Değişen kurala göre hızlıca ayırt et.',
     timeLimit: 60,
     color: '#06b6d4',
     route: '/game/stroop-test'
@@ -227,7 +227,7 @@ export const GAMES = [
     categoryLabel: 'Dikkat',
     difficulty: 3,
     icon: '👁️',
-    description: 'Bardakların altında kaybolan madeni parayı dikkatle takip et.',
+    description: 'Bardakların altında kaybolan madeni parayı takip et.',
     timeLimit: 90,
     color: '#06b6d4',
     route: '/game/object-track'
@@ -239,7 +239,7 @@ export const GAMES = [
     categoryLabel: 'Dikkat',
     difficulty: 3,
     icon: '🔄',
-    description: 'Matematik işlemlerinin sonucunu ve değişen TEK/ÇİFT butonlarını yönet.',
+    description: 'Aynı anda iki farklı görevi yerine getir.',
     timeLimit: 90,
     color: '#06b6d4',
     route: '/game/dual-task'
@@ -263,7 +263,7 @@ export const GAMES = [
     categoryLabel: 'Dikkat',
     difficulty: 2,
     icon: '🕵️',
-    description: '10x10 matriste birbirine çok benzeyen karakterler arasından gizli hedefi bul.',
+    description: 'Büyük matriste gizlenmiş hedef karakteri bul.',
     timeLimit: 60,
     color: '#06b6d4',
     route: '/game/visual-search'
@@ -281,15 +281,15 @@ export const GAMES = [
     route: '/game/focus-switch'
   },
 
-  // ─── 4. PROBLEM ÇÖZME (PROBLEM SOLVING) (10 OYUN) ─────────────────────────
+  // ─── 4. PROBLEM ÇÖZME (PROBLEM SOLVING) ────────────────────────────────────
   {
     id: 'sudoku-classic',
-    name: 'Sudoku Klasik',
+    name: 'Sudoku',
     category: 'problem-solving',
     categoryLabel: 'Problem Çözme',
     difficulty: 3,
     icon: '🧩',
-    description: 'Klasik 9x9 Sudoku bulmacasında eksik sayıları tamamlama egzersizi.',
+    description: 'Klasik 9x9 Sudoku bulmacasında eksik sayıları tamamla.',
     timeLimit: 300,
     color: '#10b981',
     route: '/game/sudoku-classic'
@@ -313,7 +313,7 @@ export const GAMES = [
     categoryLabel: 'Problem Çözme',
     difficulty: 2,
     icon: '🔺',
-    description: 'Tabandan tavana sayılara toplayarak piramidin zirvesine ulaş.',
+    description: 'Tabandan tavana sayıları toplayarak piramidin zirvesine ulaş.',
     timeLimit: 120,
     color: '#10b981',
     route: '/game/number-pyramid'
@@ -325,7 +325,7 @@ export const GAMES = [
     categoryLabel: 'Problem Çözme',
     difficulty: 2,
     icon: '🔀',
-    description: 'Karışık harfleri düzenleyerek kelime bul',
+    description: 'Karışık harfleri düzenleyerek kelime bul.',
     timeLimit: 60,
     color: '#10b981',
     route: '/game/anagram'
@@ -337,14 +337,14 @@ export const GAMES = [
     categoryLabel: 'Problem Çözme',
     difficulty: 3,
     icon: '⬛',
-    description: 'Örüntüdeki eksik parçayı bul',
+    description: 'Örüntüdeki eksik parçayı bul.',
     timeLimit: 90,
     color: '#10b981',
     route: '/game/pattern-complete'
   },
   {
     id: 'path-find',
-    name: 'Akış Bul (Color Flow)',
+    name: 'Renk Akışı',
     category: 'problem-solving',
     categoryLabel: 'Problem Çözme',
     difficulty: 3,
@@ -385,13 +385,13 @@ export const GAMES = [
     categoryLabel: 'Problem Çözme',
     difficulty: 3,
     icon: '🚣',
-    description: 'Klasik nehir mantık bulmacasında karakterleri güvenle karşıya geçir.',
+    description: 'Mantık bulmacasında karakterleri güvenle karşıya geçir.',
     timeLimit: 120,
     color: '#10b981',
     route: '/game/river-crossing'
   },
 
-  // ─── 5. DİL (LANGUAGE) (10 OYUN) ──────────────────────────────────────────
+  // ─── 5. DİL (LANGUAGE) ─────────────────────────────────────────────────────
   {
     id: 'wordle-game',
     name: 'Kelime Bulmaca',
@@ -399,7 +399,7 @@ export const GAMES = [
     categoryLabel: 'Dil',
     difficulty: 2,
     icon: '🔤',
-    description: '5 harfli gizli Türkçe kelimeyi 6 tahminde bulma oyunu.',
+    description: '5 harfli gizli Türkçe kelimeyi 6 tahminde bul.',
     timeLimit: 120,
     color: '#ec4899',
     route: '/game/wordle-game'
@@ -411,7 +411,7 @@ export const GAMES = [
     categoryLabel: 'Dil',
     difficulty: 2,
     icon: '⛓️',
-    description: 'Bir önceki kelimenin son harfiyle yeni kelime üret',
+    description: 'Bir önceki kelimenin son harfiyle yeni kelime üret.',
     timeLimit: 60,
     color: '#ec4899',
     route: '/game/word-chain'
@@ -423,7 +423,7 @@ export const GAMES = [
     categoryLabel: 'Dil',
     difficulty: 2,
     icon: '💬',
-    description: 'Verilen harflerden en fazla kelime üret',
+    description: 'Verilen harflerden en fazla kelime üret.',
     timeLimit: 90,
     color: '#ec4899',
     route: '/game/word-produce'
@@ -435,7 +435,7 @@ export const GAMES = [
     categoryLabel: 'Dil',
     difficulty: 3,
     icon: '📚',
-    description: 'Eksik kısmı olan deyimi tamamla',
+    description: 'Eksik kısmı olan deyimi tamamla.',
     timeLimit: 60,
     color: '#ec4899',
     route: '/game/idiom-complete'
@@ -447,7 +447,7 @@ export const GAMES = [
     categoryLabel: 'Dil',
     difficulty: 2,
     icon: '📖',
-    description: 'Eş anlamlı ve zıt anlamlı kelimeleri zamanla yarışarak eşleştir.',
+    description: 'Eş anlamlı ve zıt anlamlı kelimeleri zamanla eşleştir.',
     timeLimit: 60,
     color: '#ec4899',
     route: '/game/vocab-builder'
@@ -459,7 +459,7 @@ export const GAMES = [
     categoryLabel: 'Dil',
     difficulty: 2,
     icon: '🐝',
-    description: 'Karışık verilen harflerden en uzun Türkçe sözcüğü kur.',
+    description: 'Karışık harflerden en uzun Türkçe sözcüğü kur.',
     timeLimit: 60,
     color: '#ec4899',
     route: '/game/spelling-bee'
@@ -483,7 +483,7 @@ export const GAMES = [
     categoryLabel: 'Dil',
     difficulty: 1,
     icon: '✏️',
-    description: 'Kelimenin içindeki eksik sesli ve sessiz harfleri tamamla.',
+    description: 'Kelimenin içindeki eksik harfleri tamamla.',
     timeLimit: 45,
     color: '#ec4899',
     route: '/game/missing-letter'
@@ -513,7 +513,7 @@ export const GAMES = [
     route: '/game/sentence-order'
   },
 
-  // ─── 6. ESNEKLİK (FLEXIBILITY) (10 OYUN) ──────────────────────────────────
+  // ─── 6. ESNEKLİK (FLEXIBILITY) ─────────────────────────────────────────────
   {
     id: 'color-flex',
     name: 'Bukalemun Zihni',
@@ -521,26 +521,26 @@ export const GAMES = [
     categoryLabel: 'Esneklik',
     difficulty: 2,
     icon: '🎭',
-    description: 'Renk ve kelime anlamı çelişkisine zihnini anında adapte et.',
+    description: 'Renk ve kelime çelişkisine zihnini anında adapte et.',
     timeLimit: 60,
     color: '#ef4444',
     route: '/game/color-flex'
   },
   {
     id: 'category-switch',
-    name: 'Kural Avcısı (WCST)',
+    name: 'Kural Avcısı',
     category: 'flexibility',
     categoryLabel: 'Esneklik',
     difficulty: 3,
     icon: '🔍',
-    description: 'Gizli eşleşme kuralını deneme-yanılma ile keşfet ve yeni kurallara hızla adapte ol.',
+    description: 'Gizli eşleşme kuralını keşfet ve yeni kurallara adapte ol.',
     timeLimit: 60,
     color: '#ef4444',
     route: '/game/category-switch'
   },
   {
     id: 'dual-rule',
-    name: 'Çift Vites Matrisi',
+    name: 'Çift Kural',
     category: 'flexibility',
     categoryLabel: 'Esneklik',
     difficulty: 3,
@@ -552,79 +552,79 @@ export const GAMES = [
   },
   {
     id: 'rule-switch',
-    name: 'Renk Bukalemunu',
+    name: 'Renk Kuralı',
     category: 'flexibility',
     categoryLabel: 'Esneklik',
     difficulty: 2,
     icon: '🔀',
-    description: 'Değişen renk kuralları ve tuzak renkli butonlara körlemesine basma.',
+    description: 'Değişen renk kuralları ve tuzak butonlara dikkat et.',
     timeLimit: 60,
     color: '#ef4444',
     route: '/game/rule-switch'
   },
   {
     id: 'shape-flex',
-    name: 'Geometrik Vites',
+    name: 'Geometrik Geçiş',
     category: 'flexibility',
     categoryLabel: 'Esneklik',
     difficulty: 2,
     icon: '🔷',
-    description: 'Geometrik boyut ve şekil kuralları arasında zihinsel vites değiştir.',
+    description: 'Boyut ve şekil kuralları arasında zihinsel geçiş yap.',
     timeLimit: 60,
     color: '#ef4444',
     route: '/game/shape-flex'
   },
   {
     id: 'direction-switch',
-    name: 'Ters Rüzgar Okları',
+    name: 'Ters Oklar',
     category: 'flexibility',
     categoryLabel: 'Esneklik',
     difficulty: 2,
     icon: '🏹',
-    description: 'Çevre okların yarattığı dikkati baskılayıp hedef yöne vites değiştir.',
+    description: 'Dikkat dağıtıcı okları görmezden gel, doğru yöne tepki ver.',
     timeLimit: 45,
     color: '#ef4444',
     route: '/game/direction-switch'
   },
   {
     id: 'multi-trait',
-    name: 'Çoklu Özellik Vitesi',
+    name: 'Çoklu Özellik',
     category: 'flexibility',
     categoryLabel: 'Esneklik',
     difficulty: 3,
     icon: '🎨',
-    description: 'Renk, şekil ve sayı boyutlarında çoklu zihinsel analiz yap.',
+    description: 'Renk, şekil ve sayı boyutlarında çoklu analiz yap.',
     timeLimit: 60,
     color: '#ef4444',
     route: '/game/multi-trait'
   },
   {
     id: 'task-switch',
-    name: 'Zihinsel Vites Anahtarı',
+    name: 'Zihinsel Vites',
     category: 'flexibility',
     categoryLabel: 'Esneklik',
     difficulty: 3,
     icon: '🔄',
-    description: 'Ekrandaki konuma göre sayı ve harf modları arasında vites değiştir.',
+    description: 'Sayı ve harf modları arasında hızla geçiş yap.',
     timeLimit: 90,
     color: '#ef4444',
     route: '/game/task-switch'
   },
   {
     id: 'emotion-flex',
-    name: 'Jest & Renk Esnekliği',
+    name: 'Jest ve Renk',
     category: 'flexibility',
     categoryLabel: 'Esneklik',
     difficulty: 2,
     icon: '😀',
-    description: 'Duygusal mimikler ile renklerin yarattığı çelişkili görsel tuzakları yönet.',
+    description: 'Duygusal mimikler ve renklerle oluşan görsel tuzakları aş.',
     timeLimit: 60,
     color: '#ef4444',
     route: '/game/emotion-flex'
   },
   {
     id: 'number-letter-switch',
-    name: 'Matris Refleks Anahtarı',
+    name: 'Matris Refleksi',
     category: 'flexibility',
     categoryLabel: 'Esneklik',
     difficulty: 3,

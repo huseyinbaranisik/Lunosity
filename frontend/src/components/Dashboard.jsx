@@ -372,7 +372,7 @@ export default function Dashboard() {
             </div>
             <div>
               <span className="text-xs font-black uppercase text-black block mb-1">{card.label}</span>
-              <div className="text-4xl font-black text-black">{card.val}</div>
+              <div className="text-4xl font-black text-black shine-text">{card.val}</div>
             </div>
           </div>
         ))}
@@ -402,7 +402,7 @@ export default function Dashboard() {
               <ResponsiveContainer width="100%" height="100%">
                 <LineChart data={chartData}>
                   <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
-                  <XAxis dataKey="name" stroke="#000" fontSize={10} fontWeight={800} tickLine={false} />
+                  <XAxis dataKey="name" stroke="#000" fontSize={10} fontWeight={800} tickLine={false} interval={0} />
                   <YAxis stroke="#000" fontSize={11} fontWeight={800} tickLine={false} />
                   <Tooltip contentStyle={{ backgroundColor: '#FEF08A', borderColor: '#000', borderWidth: '2px', borderRadius: '0.75rem', color: '#000', fontWeight: 'bold', boxShadow: '4px 4px 0px 0px #000' }} />
                   <Line type="monotone" dataKey="score" stroke="#000" strokeWidth={4}
@@ -429,7 +429,7 @@ export default function Dashboard() {
           <div className="h-64 w-full">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={ratingData}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
+                <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" vertical={false} />
                 <XAxis dataKey="star" stroke="#000" fontSize={12} fontWeight={800} tickLine={false} />
                 <YAxis stroke="#000" fontSize={10} fontWeight={800} tickLine={false} />
                 <Tooltip contentStyle={{ backgroundColor: '#BAE6FD', borderColor: '#000', borderWidth: '2px', borderRadius: '0.75rem', color: '#000', fontWeight: 'bold', boxShadow: '4px 4px 0px 0px #000' }} />
@@ -454,30 +454,30 @@ export default function Dashboard() {
         {userScores.length === 0 ? (
           <p className="text-slate-600 font-bold text-sm text-center py-6">Geçmiş oyun kaydı bulunmuyor.</p>
         ) : (
-          <div className="overflow-x-auto">
+          <div className="overflow-hidden rounded-2xl border-2 border-ink/10 dark:border-white/10 shadow-sm">
             <table className="w-full text-left text-sm text-black font-bold">
-              <thead className="bg-neo-yellow text-xs font-black uppercase border-b-2 border-black">
+              <thead className="bg-ink/5 dark:bg-white/5 text-xs font-black uppercase border-b-2 border-ink/10 dark:border-white/10">
                 <tr>
-                  <th className="px-4 py-3">Oyun Adı</th>
-                  <th className="px-4 py-3">Kategori</th>
-                  <th className="px-4 py-3">Skor</th>
-                  <th className="px-4 py-3">Tarih</th>
+                  <th className="px-4 py-4">Oyun Adı</th>
+                  <th className="px-4 py-4">Kategori</th>
+                  <th className="px-4 py-4">Skor</th>
+                  <th className="px-4 py-4">Tarih</th>
                 </tr>
               </thead>
-              <tbody className="divide-y-2 divide-black">
+              <tbody className="divide-y divide-ink/10 dark:divide-white/10">
                 {userScores.slice(0, 10).map((s, idx) => {
                   const gameObj = GAMES.find((g) => g.id === s.gameId);
                   return (
-                    <tr key={s.id || `${s.playedAt}-${idx}`} className="hover:bg-slate-50 transition-colors">
-                      <td className="px-4 py-3 font-extrabold text-black flex items-center gap-2">
-                        <span>{gameObj?.icon || '🎮'}</span>
+                    <tr key={s.id || `${s.playedAt}-${idx}`} className="hover:bg-ink/5 dark:hover:bg-white/10 transition-colors">
+                      <td className="px-4 py-3.5 font-extrabold text-black flex items-center gap-2">
+                        <span className="text-lg drop-shadow-sm">{gameObj?.icon || '🎮'}</span>
                         <span>{gameObj?.name || s.gameId}</span>
                       </td>
-                      <td className="px-4 py-3 text-xs font-bold text-slate-700">
+                      <td className="px-4 py-3.5 text-xs font-bold text-ink-2 dark:text-slate-300">
                         {gameObj?.categoryLabel || 'Genel'}
                       </td>
-                      <td className="px-4 py-3 font-mono font-black text-black text-base">{s.score}</td>
-                      <td className="px-4 py-3 text-xs text-slate-600">
+                      <td className="px-4 py-3.5 font-mono font-black text-black text-base">{s.score}</td>
+                      <td className="px-4 py-3.5 text-xs text-ink-2 dark:text-slate-400">
                         {new Date(s.playedAt).toLocaleDateString('tr-TR')}
                       </td>
                     </tr>
