@@ -1,4 +1,4 @@
-﻿@import 'tailwindcss/base';
+@import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
@@ -320,7 +320,6 @@ html.dark .site-card {
 html.dark .text-ink    { color: #E8E6F0 !important; }
 html.dark .text-ink-2  { color: #A09DB8 !important; }
 html.dark .text-mist   { color: #6B6885 !important; }
-html.dark .text-black  { color: #E8E6F0 !important; }
 html.dark .text-slate-700 { color: #B0ADCC !important; }
 html.dark .text-slate-600 { color: #9996B8 !important; }
 html.dark .text-slate-800 { color: #C8C6E0 !important; }
@@ -456,11 +455,6 @@ html.dark .border-b-2.border-black {
 /* �� DASHBOARD DARK MODE �������������������������������������� */
 
 /* T�m text-black overridelar� */
-html.dark .text-black {
-  color: #E8E6F0 !important;
-}
-
-/* Slate metinler */
 html.dark .text-slate-600 { color: #9996B8 !important; }
 html.dark .text-slate-700 { color: #B0ADCC !important; }
 html.dark .text-slate-800 { color: #C8C6E0 !important; }
